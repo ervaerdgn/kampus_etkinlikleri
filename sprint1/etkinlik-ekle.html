@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri</title>
+</head>
+<body>
+    <h1>Etkinlik Ekle</h1>
+     <nav>
+        <a href="index.html">Ana Sayfa</a> 
+        <a href="etkinlik-detay.html">Liste</a> 
+        <a href="etkinlik-ekle.html">Ekle</a> 
+        <a href="etkinlik-guncelle.html">Güncelle</a>
+    </nav>
+    <br>
+    <form action="#" method="POST">
+        <div>
+            <label for="etkinlikAdi">Etkinlik Adı</label><br>
+            <input type="text" id="etkinlikAdi" name="etkinlikAdi" required>
+        </div>
+        <br>
+        <div>
+            <label for="kategori">Kategori</label><br>
+            <select id="kategori" name="kategori" required>
+                <option value="">Seçiniz...</option>
+                <option value="seminer">Seminer</option>
+                <option value="atolye">Atölye</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="tarih">Tarih</label><br>
+         
+            <input type="date" id="tarih" name="tarih" required>
+        </div>
+        <br>
+        <div>
+            <label for="aciklama">Açıklama</label><br>
+            <textarea id="aciklama" name="aciklama" rows="4" cols="30" required></textarea>
+        </div>
+        <br>
+        <button type="submit">Kaydet</button>
+    </form>
+</body>
+</html>
