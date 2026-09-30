@@ -1,0 +1,149 @@
+
+/* ERVA ERDOĞAN - 2321032050*/
+:root {
+
+
+    --no: 2321032050;
+    --ton: mod(var(--no), 360);
+    --renk-ana: hsl(var(--ton) 65% 38%);
+    --renk-zemin: hsl(var(--ton) 30% 97%);
+    --font: Arial, sans-serif;
+    --bosluk-m: 1rem; 
+    --kose: 8px;
+}
+body { 
+    font-family: var(--font); 
+    background-color: var(--renk-zemin);
+    color: #333; 
+}
+
+
+main {
+    padding: 20px;
+}
+
+header {
+    background-color: var(--renk-ana);
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+p strong {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.etkinlik-kapsayici {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--bosluk-m);
+    margin-top: 20px;
+}
+
+.kart {
+    background-color: white;
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kart a {
+    color: var(--renk-ana);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.detay-kapsayici {
+    display: grid;
+    gap: var(--bosluk-m); 
+    grid-template-columns: max-content max-content; 
+    align-items: start;
+}
+.afis-alani img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+}
+.etkinlik-kunyesi {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+}
+
+.etkinlik-kunyesi dt {
+    font-weight: bold;
+    color: #333; 
+}
+
+.etkinlik-kunyesi dd {
+    margin: 0;
+}
+
+.geri-link {
+    color: var(--renk-ana);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form {
+    background-color: white;
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 500px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+button {
+    background-color: var(--renk-ana);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1rem;
+}
+.hata {
+    border-color: red;
+    color: red;
+}
+
+.hata::placeholder {
+    color: red;
+}
