@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri</title>
+    <link rel="stylesheet" href="css/2321032050.css">
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <header>
+          <h1> Tüm Etkinlikler</h1>
+        <nav>
+        <a href="index.html">Ana Sayfa</a> 
+     
+        <a href="etkinlik-ekle.html">Ekle</a> 
+       
+         <a href="etkinlikler.html">Etkinlikler</a>
+    </nav>
+    </header>
+      
+    <h2>Etkinlikler </h2>
+    <form id="filtre-formu" class="filtre">
+  <div>
+    <label for="arama">Etkinlik ara</label>
+    <input type="search" id="arama" placeholder="Örn. atölye, kariyer">
+  </div>
+  <div>
+    <label for="kategori-filtre">Kategori</label>
+    <select id="kategori-filtre">
+      <option value="">Tümü</option>
+    </select>
+  </div>
+</form>
+<p id="sonuc"></p>
+   
+ <section id="etkinlik-listesi" class="etkinlik-kapsayici"></section>
+    <br>
+    <footer>Erva Erdoğan - 2026</footer>
+</body>
+</html>
