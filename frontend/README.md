@@ -1,4 +1,4 @@
-https://CANLI-LINK-BURAYA.vercel.app
+https://kampus-etkinlikleri-git-main-erva2.vercel.app/
 
 # Kampüs Etkinlikleri (Sprint 4: Vite, TypeScript, React)
 
