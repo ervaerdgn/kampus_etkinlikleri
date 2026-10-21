@@ -21,12 +21,17 @@ body {
   line-height: 1.5;
 }
 
-header {
+.ust-alan {
   background: var(--renk-ana);
   color: white;
   padding: var(--bosluk-m);
 }
-header h1 { margin: 0 0 var(--bosluk-s); font-size: 1.5rem; }
+.ust-alan h1 { margin: 0 0 var(--bosluk-s); font-size: 1.5rem; }
+.ust-alan p { margin: 0 0 var(--bosluk-s);
+  color: white; 
+  text-align: left; }
+
+
 
 nav { display: flex; flex-wrap: wrap; gap: var(--bosluk-s) var(--bosluk-m); }
 nav a {
@@ -97,7 +102,7 @@ button {
 }
 .filtre input, .filtre select { margin-bottom: 0; }
 
-#sonuc { color: var(--renk-ana); font-weight: bold; }
+#sonuc, .sonuc { color: var(--renk-ana); font-weight: bold; }
 .kunye-alani h2, #detay h2 { margin-top: 0; }
 
 .hata-kutusu {
@@ -160,3 +165,5 @@ nav a[aria-current="page"] {
   padding: 0.5rem 0.75rem;
   font-weight: bold;
 }.afis-alani { margin: 0; }
+#root { max-width: none; margin: 0; padding: 0; text-align: left; border: 0; }
+.ust-alan h1 { color: white; text-align: left; }
