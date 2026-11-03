@@ -9,6 +9,7 @@
   --bosluk-s: 0.5rem;
   --bosluk-m: 1rem;
   --kose: 8px;
+    color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -25,13 +26,20 @@ body {
   background: var(--renk-ana);
   color: white;
   padding: var(--bosluk-m);
+  
+ 
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 .ust-alan h1 { margin: 0 0 var(--bosluk-s); font-size: 1.5rem; }
 .ust-alan p { margin: 0 0 var(--bosluk-s);
   color: white; 
   text-align: left; }
-
-
+#detay h2 {
+  color: var(--renk-ana);
+  margin-bottom: var(--bosluk-s);
+  text-align: left; 
+}
 
 nav { display: flex; flex-wrap: wrap; gap: var(--bosluk-s) var(--bosluk-m); }
 nav a {
@@ -165,5 +173,18 @@ nav a[aria-current="page"] {
   padding: 0.5rem 0.75rem;
   font-weight: bold;
 }.afis-alani { margin: 0; }
-#root { max-width: none; margin: 0; padding: 0; text-align: left; border: 0; }
+#root { 
+  max-width: 1000px; 
+  margin: 0 auto;
+  padding: 0; 
+  text-align: left; 
+  border: 0; 
+}
 .ust-alan h1 { color: white; text-align: left; }
+
+.bolum-baslik {
+  color: var(--renk-metin);
+  margin-top: var(--bosluk-m);
+  margin-bottom: var(--bosluk-m);
+}
+

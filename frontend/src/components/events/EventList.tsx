@@ -1,23 +1,23 @@
+import React from "react";
 import type { CampusEvent } from "../../types/campus-event";
 import EventCard from "./EventCard";
 
-interface EventListProps {
+interface Props {
   events: CampusEvent[];
-  onShowDetail: (id: string) => void;
   emptyText?: string;
 }
 
-function EventList({ events, onShowDetail, emptyText }: EventListProps) {
+function EventList({ events, emptyText = "Etkinlik bulunamadı." }: Props) {
   if (events.length === 0) {
-    return <p className="sonuc">{emptyText}</p>;
+    return <p>{emptyText}</p>;
   }
 
   return (
-    <section className="etkinlik-kapsayici">
+    <div className="etkinlik-kapsayici">
       {events.map((event) => (
-        <EventCard key={event.id} event={event} onShowDetail={onShowDetail} />
+        <EventCard key={event.id} event={event} />
       ))}
-    </section>
+    </div>
   );
 }
 

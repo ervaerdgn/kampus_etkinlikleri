@@ -1,78 +1,82 @@
-import type { Category } from "../../types/campus-event";
+import React, { useState } from "react";
+import type { EventFormData } from "../../context/EventsContext";
 
-// Form için: geçerli 4 kategorinin hepsi
-const formCategories: Category[] = ["Seminer", "Atölye", "Söyleşi", "Yarışma"];
-
-interface EventFormProps {
-  onSubmit: () => void;
-  submitText?: string;
+interface Props {
+  initialValues?: EventFormData;
+  onSubmit: (data: EventFormData) => void;
+  submitText: string;
 }
 
-function EventForm({ onSubmit, submitText = "Kaydet" }: EventFormProps) {
+const defaultValues: EventFormData = {
+  title: "",
+  category: "",
+  date: "",
+  time: "",
+  location: "",
+  description: "",
+  capacity: "",
+};
+
+function EventForm({ initialValues = defaultValues, onSubmit, submitText }: Props) {
+  const [formData, setFormData] = useState<EventFormData>(initialValues);
+  const [error, setError] = useState("");
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!formData.title || !formData.date || !formData.location) {
+      setError("Lütfen zorunlu alanları doldurun.");
+      return;
+    }
+    setError("");
+    onSubmit(formData);
+  }
+
   return (
-    <>
-      <p>Bu sprintte form sadece görünüm; kayıt yapılmaz.</p>
-      <form
-        className="etkinlik-formu"
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit();
-        }}
-      >
-        <div className="alan">
-          <label htmlFor="title">Etkinlik Adı</label>
-          <input
-            id="title"
-            type="text"
-            maxLength={80}
-            placeholder="Örn. Kariyer Günleri 2026"
-          />
-        </div>
+    <form onSubmit={handleSubmit} className="kart">
+      {error && <div className="hata-kutusu">{error}</div>}
+      
+      <div className="alan">
+        <label>Etkinlik Başlığı *</label>
+        <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="category">Kategori</label>
-          <select id="category" defaultValue="">
-            <option value="">Seçiniz</option>
-            {formCategories.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div className="alan">
+        <label>Kategori</label>
+        <input type="text" name="category" value={formData.category} onChange={handleChange} />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="date">Tarih</label>
-          <input id="date" type="date" />
-        </div>
+      <div className="alan">
+        <label>Tarih *</label>
+        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="time">Saat</label>
-          <input id="time" type="time" />
-        </div>
+      <div className="alan">
+        <label>Saat</label>
+        <input type="text" name="time" value={formData.time} onChange={handleChange} />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="location">Yer</label>
-          <input
-            id="location"
-            type="text"
-            placeholder="Örn. A Blok Konferans Salonu"
-          />
-        </div>
+      <div className="alan">
+        <label>Yer *</label>
+        <input type="text" name="location" value={formData.location} onChange={handleChange} required />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="capacity">Kontenjan</label>
-          <input id="capacity" type="number" min={1} max={1000} />
-        </div>
+      <div className="alan">
+        <label>Kontenjan</label>
+        <input type="text" name="capacity" value={formData.capacity} onChange={handleChange} />
+      </div>
 
-        <div className="alan">
-          <label htmlFor="description">Açıklama</label>
-          <textarea id="description" rows={5} />
-        </div>
+      <div className="alan">
+        <label>Açıklama</label>
+        <textarea name="description" value={formData.description} onChange={handleChange} rows={4} />
+      </div>
 
-        <button type="submit">{submitText}</button>
-      </form>
-    </>
+      <button type="submit">{submitText}</button>
+    </form>
   );
 }
 

@@ -1,13 +1,18 @@
+import React from "react";
+
 interface HeaderProps {
-  title: string;
-  text?: string;
+  title?: string;
+  subtitle?: string;
 }
 
-function Header({ title, text }: HeaderProps) {
+function Header({ 
+  title = "Kampüs Etkinlikleri", 
+  subtitle = "Fakültedeki seminer, atölye ve söyleşileri tek yerden takip edin." 
+}: HeaderProps) {
   return (
-    <header className="site-baslik">
+    <header>
       <h1>{title}</h1>
-      {text && <p>{text}</p>}
+      <p>{subtitle}</p>
     </header>
   );
 }
