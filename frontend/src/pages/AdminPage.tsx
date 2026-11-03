@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { useEvents } from "../context/EventsContext";
 import Header from "../components/layout/Header";

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useParams } from "react-router-dom";
 import { useEvents } from "../context/EventsContext";
 import EventDetail from "../components/events/EventDetail";

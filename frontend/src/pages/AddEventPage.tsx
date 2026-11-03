@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useNavigate } from "react-router-dom";
 import EventForm from "../components/forms/EventForm";
 import { useEvents } from "../context/EventsContext";
