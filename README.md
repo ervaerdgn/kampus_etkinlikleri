@@ -5,7 +5,7 @@ Fakültedeki seminer, atölye, söyleşi ve yarışmaları tek bir yerden takip 
 ---
 
 ## 🚀 Canlı Önizleme (Vercel)
-* **Canlı Proje Adresi:** http://localhost:5177/
+* **Canlı Proje Adresi:** https://ervaerdogan-frontend.vercel.app/
 
 ---
 
