@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import { useEvents } from "../context/EventsContext";
 import EventList from "../components/events/EventList";
 import EventFilter from "../components/events/EventFilter";

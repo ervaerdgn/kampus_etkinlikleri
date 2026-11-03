@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { CampusEvent } from "../../types/campus-event";
 import EventCard from "./EventCard";
 
