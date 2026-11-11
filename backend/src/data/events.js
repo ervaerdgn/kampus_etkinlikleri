@@ -10,7 +10,7 @@ export const events  = [
     time: "14:00",
     location: "100. Yıl Konferans Salonu",
     description: "Geleceğinle ilgili kararsızlığı önlemek ve yol haritanı çizmende yardımcı olmak.",
-    image: "/kariyer-gunleri.jpg",
+
   },
   {
     id: "event-2",
