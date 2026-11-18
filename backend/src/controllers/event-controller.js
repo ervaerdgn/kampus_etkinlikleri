@@ -1,22 +1,33 @@
 import { events } from "../data/events.js";
+import mongoose from "mongoose";
+import { Event } from "../models/event-model.js";
 
-
-export function getEvents(req, res) {
-  const { category } = req.query;
-  const list = category
-    ? events.filter((e) => e.category === category)
-    : events;
-  res.json(list);
+export async function getEvents(req, res, next) {
+  try {
+    const filter = req.query.category
+      ? { category: req.query.category } : {};
+    const events = await Event.find(filter).sort({ date: 1 });
+    res.json(events);
+  } catch (err) {
+    next(err);
+  }
 }
-
-
-export function getEventById(req, res) {
-  const event = events.find((e) => e.id === req.params.id);
-  if (!event) return res.status(404)
-    .json({ error: { message: "Event not found" } });
-  res.json(event);
+export async function getEventById(req, res, next) {
+  try {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      return res.status(404)
+        .json({ error: { message: "Event not found" } });
+    }
+    const event = await Event.findById(req.params.id);
+    if (!event) {
+      return res.status(404)
+        .json({ error: { message: "Event not found" } });
+    }
+    res.json(event);
+  } catch (err) {
+    next(err);
+  }
 }
-
 export function createEvent(req, res) {
   const { title, category, capacity, date,
     time, location, description } = req.body ?? {};
